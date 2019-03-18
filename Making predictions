@@ -9,5 +9,6 @@ logreg.fit(X, y)
 new_data = current_data[['age', 'gender_F', 'time_since_last_gift']]
 
 # Make a prediction for each observation in new_data and assign it to predictions
+# the second position in the array is the probability that donor will donate
 predictions = logreg.predict_proba(new_data)
 print(predictions[0:5])
