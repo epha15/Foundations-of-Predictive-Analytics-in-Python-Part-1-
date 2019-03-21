@@ -1,0 +1,19 @@
+# Discretize the variable 
+basetable["disc_number_gift"] = pd.cut(basetable['number_gift'],[0,5,10,20])
+
+# Count the number of observations per group
+print(basetable.groupby("disc_number_gift").size())
+
+import numpy as np
+variables = ['number_gift']
+print(variables)
+
+#Loop over quantiles
+q =[]
+for item in np.linspace(0,1,11):
+    a = np.quantile(basetable[variable],item)
+    q.append(a)
+
+print(q)
+basetable['disc_number_gift2'] = pd.cut(basetable['number_gift'],q)
+#print(basetable.groupby('disc_number_gift2').size())
