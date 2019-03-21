@@ -1,0 +1,21 @@
+# Helping understanding the concept of cumulative gain in business case 
+
+# Plot the cumulative gains
+skplt.metrics.plot_cumulative_gain(targets_test, predictions_test)
+plt.show()
+
+# Number of targets you want to reach
+#Assume the cost of a campaign is 0 Euro and 
+#the reward of addressing a target is 50 Euro. Fill out how many targets should be reached to make 30 000 Euro profit.
+number_targets_toreach = 30000 / 50
+
+#There are 1000 targets in total. Fill out which percentage of the targets should be addressed.
+perc_targets_toreach = number_targets_toreach / 1000
+perc_targets_toreach = 0.6
+
+#Use the cumulative gains curve to know which percentage of the population should be addressed. Round to the tenth.
+# Gain = perc_targets_toreach = 0.6 and look for the percentage of sample axis to find the percentage of population should be addressed
+cumulative_gains = 0.4
+
+#Given that the population consists of 10 000 donors, fill out how many donors should be addressed.
+number_donors_toreach = cumulative_gains * 10000
