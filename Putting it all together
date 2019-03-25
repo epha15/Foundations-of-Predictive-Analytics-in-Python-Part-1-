@@ -1,5 +1,5 @@
 # Variables you want to make predictor insight graph tables for
-
+#this is creating pivot table  with target as columns
 def create_pig_table(df, target, variable):
     # Group by the variable you want to plot
     groups = df[[target,variable]].groupby(variable)
@@ -7,6 +7,8 @@ def create_pig_table(df, target, variable):
     pig_table = groups[target].agg({'Incidence' : np.mean, \
     'Size' : np.size}).reset_index()
     return pig_table
+    
+
 
 variables = ["income","gender","disc_mean_gift","disc_time_since_last_gift"]
 
